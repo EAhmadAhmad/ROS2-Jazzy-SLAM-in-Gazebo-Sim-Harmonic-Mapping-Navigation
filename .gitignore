@@ -1,0 +1,29 @@
+# Build and install directories
+build/
+install/
+log/
+*.pyc
+__pycache__/
+
+# IDE specific
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# ROS2 specific
+*.bag
+*.pgm
+*.yaml
+*.pcd
+*.stl
+*.pbstream
+
+# Gazebo
+*.world~
+*.sdf~
+
+# Docker
+.dockerignore

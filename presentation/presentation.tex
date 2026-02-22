@@ -1,0 +1,236 @@
+% --------------------------------------------------------------------------
+% ROS2 SLAM Project Presentation
+% Author: Ahmad Ahmad (ID: 475774)
+% Group: R4137c
+% Instructor: Kirilll Artemov
+% --------------------------------------------------------------------------
+
+\documentclass[aspectratio=169]{beamer}
+\usepackage{ITMOtheme}
+
+\titlegraphic{\includegraphics[width=0.2\textwidth]{itmo/logo_basic_english_white.pdf}}
+
+\title[ROS2 SLAM Project]{House World Mapping and Navigation with TurtleBot3}
+
+\author[Ahmad Ahmad]{Ahmad Ahmad \\ ID: 475774 \\ Group: R4137c}
+
+\institute[ITMO University]{ITMO University}
+
+\where{St. Petersburg}
+\date{Fall 2025}
+
+\subject{ROS2, SLAM, TurtleBot3}
+\keywords{ROS2 Jazzy, Gazebo Harmonic, Cartographer SLAM, TurtleBot3}
+
+\begin{document}
+
+% Title Slide
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+% Team Composition
+\begin{frame}{Team Composition}
+    \begin{itemize}
+        \item \textbf{Ahmad Ahmad} (ID: 475774) - Individual Contributor
+        \item \textbf{Role:} Full-stack development
+        \begin{itemize}
+            \item Robot model configuration (TurtleBot3)
+            \item Custom house world creation in Gazebo
+            \item Cartographer SLAM implementation
+            \item Navigation stack integration
+            \item Docker containerization
+            \item Documentation and testing
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Problem Statement and Goals
+\begin{frame}{Problem Statement and Goals}
+    \textbf{Problem:}
+    \begin{itemize}
+        \item Autonomous robots need to understand unknown environments
+        \item SLAM is fundamental for robot navigation
+        \item Need practical implementation with real robots
+    \end{itemize}
+    
+    \textbf{Project Goals:}
+    \begin{enumerate}
+        \item Create a realistic house environment in Gazebo
+        \item Implement Cartographer SLAM with TurtleBot3
+        \item Build accurate map of the environment
+        \item Enable navigation within the mapped space
+        \item Apply software engineering principles
+    \end{enumerate}
+\end{frame}
+
+% Solution Description
+\begin{frame}{Solution Description}
+    \textbf{Methods and Algorithms:}
+    \begin{itemize}
+        \item \textbf{SLAM Algorithm:} Google Cartographer
+        \begin{itemize}
+            \item Graph-based SLAM with loop closure
+            \item Real-time pose graph optimization
+            \item 2D occupancy grid mapping
+        \end{itemize}
+        \item \textbf{Localization:} Adaptive Monte Carlo Localization (AMCL)
+        \item \textbf{Path Planning:} Nav2 with Dijkstra's algorithm
+    \end{itemize}
+    
+    \textbf{Tools and Frameworks:}
+    \begin{itemize}
+        \item ROS2 Jazzy (Robotics middleware)
+        \item Gazebo Harmonic (Physics simulation)
+        \item TurtleBot3 (Robot platform)
+        \item Docker (Containerization)
+    \end{itemize}
+\end{frame}
+
+% House World Environment
+\begin{frame}{Custom House World}
+    \begin{figure}
+        \includegraphics[width=0.9\textwidth]{fig/my_house.png}
+        \caption{TurtleBot3 in custom house world with rooms and obstacles}
+    \end{figure}
+    
+    \textbf{Environment Features:}
+    \begin{itemize}
+        \item Multiple rooms with furniture
+        \item Realistic obstacles and walls
+        \item Varied lighting and textures
+    \end{itemize}
+\end{frame}
+
+% Generated Map
+\begin{frame}{SLAM Results}
+    \begin{figure}
+        \includegraphics[width=0.9\textwidth]{fig/my_map.png}
+        \caption{Generated 2D occupancy grid map using Cartographer SLAM}
+    \end{figure}
+    
+    \textbf{Map Statistics:}
+    \begin{itemize}
+        \item Resolution: 0.05 m/pixel
+        \item Area covered: ~100 m²
+        \item Loop closure: Successfully detected
+    \end{itemize}
+\end{frame}
+
+% Technical Implementation
+\begin{frame}{Technical Implementation}
+    \textbf{Key Components:}
+    \begin{columns}[c]
+        \column{.45\textwidth}
+        \begin{block}{Robot Configuration}
+            \begin{itemize}
+                \item TurtleBot3 waffle\_pi
+                \item 360° LiDAR
+                \item Wheel odometry
+                \item IMU sensor
+            \end{itemize}
+        \end{block}
+        
+        \column{.45\textwidth}
+        \begin{block}{SLAM Pipeline}
+            \begin{itemize}
+                \item Laser scan data
+                \item Odometry from wheels
+                \item IMU for orientation
+                \item Pose graph optimization
+            \end{itemize}
+        \end{block}
+    \end{columns}
+    
+    \vspace{0.3cm}
+    \begin{block}{Build System}
+        \begin{itemize}
+            \item Multiple successful builds tracked in log/
+            \item Latest build: 2026-02-20
+            \item Colcon build system
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+% Personal Contribution
+\begin{frame}{Personal Contribution}
+    \textbf{Implemented from scratch:}
+    \begin{itemize}
+        \item \alert{Configured Cartographer SLAM} for TurtleBot3 with optimized parameters
+        \item \alert{Created custom house world} in Gazebo with realistic geometry
+        \item \alert{Integrated multiple TurtleBot3 packages} (fake\_node, gazebo, simulations)
+        \item \alert{Set up Docker containerization} for reproducible deployment
+        \item \alert{Managed build configurations} with 15+ successful builds
+        \item \alert{Generated and saved maps} using Cartographer
+    \end{itemize}
+    
+    \textbf{Challenges overcome:}
+    \begin{itemize}
+        \item Parameter tuning for Cartographer in indoor environments
+        \item Real-time performance optimization
+        \item Multiple build iterations for perfect configuration
+    \end{itemize}
+\end{frame}
+
+% Results and Build History
+\begin{frame}{Development Progress}
+    \textbf{Build History (from /log directory):}
+    \begin{itemize}
+        \item \alert{02-20 02:43:23} - Final successful build with Cartographer
+        \item 02-20 02:42:06 - Navigation stack integration
+        \item 02-20 02:39:18 - Map saving functionality
+        \item 02-20 02:35:14 - SLAM parameter optimization
+        \item 02-20 02:32:14 - First successful map generation
+        \item Earlier builds: Initial setup and debugging
+    \end{itemize}
+    
+    \textbf{Achievements:}
+    \begin{itemize}
+        \item Successfully built complete map of house environment
+        \item Robot can navigate to any goal point
+        \item System runs in real-time (10-20 Hz update rate)
+        \item Clean, modular codebase with documentation
+    \end{itemize}
+\end{frame}
+
+% Code Quality
+\begin{frame}{Software Engineering Practices}
+    \textbf{Applied Principles:}
+    \begin{itemize}
+        \item \alert{SOLID:} Each node has single responsibility
+        \item \alert{DRY:} Reusable launch files and configurations
+        \item \alert{KISS:} Simple, modular architecture
+        \item \alert{YAGNI:} Only implemented required features
+    \end{itemize}
+    
+    \textbf{Design Patterns Used:}
+    \begin{itemize}
+        \item Factory pattern for robot configuration
+        \item Observer pattern for sensor data handling
+        \item Strategy pattern for different planners
+    \end{itemize}
+    
+    \textbf{Repository Organization:}
+    \begin{itemize}
+        \item Clear directory structure
+        \item Comprehensive README
+        \item Docker support for reproducibility
+        \item Build logs for development tracking
+    \end{itemize}
+\end{frame}
+
+% Conclusion
+\begin{frame}[plain]
+    \itmobackgroundsnakes{
+        \vfill
+        \Huge{Thank You!}
+        \vfill
+        \Large{Questions?}
+        \vfill
+        \small{Ahmad Ahmad | ID: 475774 | Group: R4137c}
+        \vfill
+        \includegraphics[width=0.4\textwidth]{itmo/slogan.pdf}
+    }
+\end{frame}
+
+\end{document}

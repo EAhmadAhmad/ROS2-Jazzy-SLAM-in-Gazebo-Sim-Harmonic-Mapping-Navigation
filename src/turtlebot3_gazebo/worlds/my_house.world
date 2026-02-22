@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <world name="default">
+    <scene>
+      <shadows>0</shadows>
+    </scene>
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>0.319654 -0.235002 9.29441 0 1.5138 0.009599</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+    <physics type="ode">
+      <real_time_update_rate>1000.0</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>150</iters>
+          <precon_iters>0</precon_iters>
+          <sor>1.400000</sor>
+          <use_dynamic_moi_rescaling>1</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0.00001</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>2000.000000</contact_max_correcting_vel>
+          <contact_surface_layer>0.01000</contact_surface_layer>
+        </constraints>
+      </ode>
+    </physics>
+    <plugin
+      filename="gz-sim-physics-system"
+      name="gz::sim::systems::Physics">
+    </plugin>
+    <plugin
+      filename="gz-sim-user-commands-system"
+      name="gz::sim::systems::UserCommands">
+    </plugin>
+    <plugin
+      filename="gz-sim-scene-broadcaster-system"
+      name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+    <plugin
+      filename="gz-sim-sensors-system"
+      name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin
+      filename="gz-sim-imu-system"
+      name="gz::sim::systems::Imu">
+    </plugin>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground Plane</uri>
+      <name>ground_plane</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <model name='turtlebot3_house'>
+      <static>true</static>
+      <include>
+        <uri>model://turtlebot3_house</uri>
+      </include>
+      <pose>-2.3881200328075645e-15 0.30209800601005554 -0.12204031646251678 0 0 -7.7715601135849117e-16</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <include>
+      <uri>file:///home/ali-suleiman/slam_ros2_project/install/turtlebot3_gazebo/share/turtlebot3_gazebo/models/turtlebot3_waffle</uri>
+      <name>waffle</name>
+      <pose>-2.0006537207294279 -0.50000000609196027 0.010007281061733464 -1.6161431235863735e-09 -0.0056917727207861871 -3.9125389362192409e-06</pose>
+    </include>
+    <include>
+      <uri>file:///home/ali-suleiman/.gz/fuel/fuel.gazebosim.org/openrobotics/models/hatchback red copy/4</uri>
+      <name>hatchback_red</name>
+      <pose>3.4069571495056152 -3.1349446773529053 0 0 0 1.5202799842733437</pose>
+    </include>
+    <include>
+      <uri>file:///home/ali-suleiman/.gz/fuel/fuel.gazebosim.org/openrobotics/models/classcbed/3</uri>
+      <name>ClassCBed</name>
+      <pose>-6.3645696501981748 -2.911718120102079 0.053333930541595527 -3.0990600506425095e-06 0.073406764185997966 0.024092998083683145</pose>
+    </include>
+    <include>
+      <uri>file:///home/ali-suleiman/.gz/fuel/fuel.gazebosim.org/openrobotics/models/standard toilet/1</uri>
+      <name>Toilet</name>
+      <pose>0.024041470140218735 3.213620662689209 0 0 0 1.5821999764788481</pose>
+    </include>
+    <include>
+      <uri>file:///home/ali-suleiman/.gz/fuel/fuel.gazebosim.org/openrobotics/models/chairpotatochip/3</uri>
+      <name>ChairPotatoChip</name>
+      <pose>-7.0147827511135601 3.0431905173479841 -0.0019071094610068958 -7.6043540703718618e-12 -1.6401526404685006e-07 1.1540745711442269e-18</pose>
+    </include>
+    <include>
+      <uri>file:///home/ali-suleiman/.gz/fuel/fuel.gazebosim.org/openrobotics/models/chairpotatochip/3</uri>
+      <name>ChairPotatoChip_0</name>
+      <pose>-0.32439566416672672 3.7437047871838263 0.046123077544973766 -0.040868833210569853 0.07633882578997965 3.1021642876820756</pose>
+    </include>
+    <include>
+      <uri>file:///home/ali-suleiman/.gz/fuel/fuel.gazebosim.org/openrobotics/models/chairpotatochip/3</uri>
+      <name>ChairPotatoChip_1</name>
+      <pose>3.2953200340271032 2.7405951023101807 -0.001907059457153948 -7.6052873924737101e-12 -1.6401874627675101e-07 1.1542841442820452e-18</pose>
+    </include>
+    <include>
+      <uri>file:///home/ali-suleiman/.gz/fuel/fuel.gazebosim.org/openrobotics/models/chairpotatochip/3</uri>
+      <name>ChairPotatoChip_2</name>
+      <pose>6.3678994178710013 2.7718484401703258 -0.0019071537326068987 -1.9407136306371217e-09 1.574720238344535e-07 3.1294700005806497</pose>
+    </include>
+    <include>
+      <uri>file:///home/ali-suleiman/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <name>DiningChair</name>
+      <pose>6.3762907981872559 -1.9046499729156494 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/ali-suleiman/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <name>DiningChair_0</name>
+      <pose>5.8844084739685059 -2.7558090686798096 0 0 0 1.5852600711425451</pose>
+    </include>
+    <include>
+      <uri>file:///home/ali-suleiman/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <name>DiningChair_1</name>
+      <pose>6.6848244667053223 -2.6595404148101807 0 0 0 -1.5610300204405179</pose>
+    </include>
+    <include>
+      <uri>file:///home/ali-suleiman/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <name>DiningChair_2</name>
+      <pose>6.4166979789733887 -3.5508413314819336 0 0 0 3.0874299975836803</pose>
+    </include>
+    <include>
+      <uri>file:///home/ali-suleiman/.gz/fuel/fuel.gazebosim.org/openrobotics/models/casual female/4</uri>
+      <name>casual_female</name>
+      <pose>-5.9284376911055503 3.317679746220044 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/ali-suleiman/.gz/fuel/fuel.gazebosim.org/openrobotics/models/casual female/4</uri>
+      <name>casual_female_0</name>
+      <pose>5.6123800277709961 4.3674697875976562 0 0 0 -3.1210578243694762</pose>
+    </include>
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.10000000000000001 -0.90000000000000002</direction>
+      <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+      <specular>0.200000003 0.200000003 0.200000003 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>
